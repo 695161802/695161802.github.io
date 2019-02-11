@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>关于前端跨域解决方法 | 晓小小小码农</title>
+  <title>Tag: 小程序 | 晓小小小码农</title>
   <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="https://xaoxuu.com/assets/img/favicons/favicon-32x32.png">
@@ -122,16 +122,27 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            <article id="post-关于前端跨域解决方法" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+            
+    <script>
+        window.subData= { title:'tag : 小程序'}
+    </script>
+
+
+<section class="post-list">
+    
+    
+        <div class="post-wrapper">
+            <article class="post reveal ">
     <section class="meta">
-        <h1 class="title">
-            
-                关于前端跨域解决方法
-            
-        </h1>
+        <h2 class="title">
+            <a href="/2018/11/29/小程序中ios手机输入法带有表情显示问题/">
+                
+                    小程序ios输入表情显示和存取问题
+                
+            </a>
+        </h2>
         <time>
-            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-12&nbsp;&nbsp;
-            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-29
         </time>
         
     
@@ -143,160 +154,73 @@
     </section>
 
     <section class="article typo">
-
-        <div class="article-entry" itemprop="articleBody">
-            <h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><blockquote>
-<ol>
-<li>网络协议不同(http/https)</li>
-</ol>
-</blockquote>
-<hr>
-<blockquote>
-<ol start="2">
-<li>域名不同(<a href="http://www.baidu.com/www.baidu.cn" target="_blank" rel="noopener">www.baidu.com/www.baidu.cn</a>)</li>
-</ol>
-</blockquote>
-<hr>
-<blockquote>
-<ol start="3">
-<li>端口不一样</li>
-</ol>
-</blockquote>
-<hr>
-<blockquote>
-<ol start="4">
-<li>以上三个都一样时称“同源策略”，否则就是跨域请求</li>
-</ol>
-</blockquote>
-<a id="more"></a>
-<h2 id="在前端HTML中的部分标签是自带跨域天赋"><a href="#在前端HTML中的部分标签是自带跨域天赋" class="headerlink" title="在前端HTML中的部分标签是自带跨域天赋"></a>在前端HTML中的部分标签是自带跨域天赋</h2><blockquote>
-<p>a连接、重定向、Form表单提交</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>资源引入：<br><strong><code>&lt;link&gt;</code></strong> 、 <strong><code>&lt;script&gt;</code></strong> 、 <strong><code>&lt;img&gt;</code></strong>等…css里面的 <strong><code>background-image</code></strong> 、 <strong><code>@font-face()</code></strong><br>在img中第三方的服务端会有防盗链使获取不到图片</p>
-</blockquote>
-<h2 id="跨域解决"><a href="#跨域解决" class="headerlink" title="跨域解决"></a>跨域解决</h2><h3 id="ajax-JSONP"><a href="#ajax-JSONP" class="headerlink" title="ajax-JSONP"></a>ajax-JSONP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	url: &apos;http://www.baidu.com:8080/action&apos;,</span><br><span class="line">    type: &apos;get&apos;,</span><br><span class="line">    dataType: &apos;jsonp&apos;,  // 请求方式为jsonp</span><br><span class="line">    jsonpCallback: &quot;collback&quot;,    // 自定义回调函数名</span><br><span class="line">    data: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="proxyTable代理-node"><a href="#proxyTable代理-node" class="headerlink" title="proxyTable代理(node)"></a>proxyTable代理(node)</h3><h5 id="这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求"><a href="#这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求" class="headerlink" title="这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求"></a>这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求</h5><h5 id="代理跨域本质-本地服务器-–》-代理-–》目标服务器-–》拿到数据后通过代理伪装成本地服务请求的返回值-—》然后浏览器就顺利收到了我们想要的数据"><a href="#代理跨域本质-本地服务器-–》-代理-–》目标服务器-–》拿到数据后通过代理伪装成本地服务请求的返回值-—》然后浏览器就顺利收到了我们想要的数据" class="headerlink" title="代理跨域本质 本地服务器 –》 代理 –》目标服务器 –》拿到数据后通过代理伪装成本地服务请求的返回值 —》然后浏览器就顺利收到了我们想要的数据"></a>代理跨域本质 本地服务器 –》 代理 –》目标服务器 –》拿到数据后通过代理伪装成本地服务请求的返回值 —》然后浏览器就顺利收到了我们想要的数据</h5><h3 id="以上是两种是我常用的、以下是前端的各种跨域解决方式"><a href="#以上是两种是我常用的、以下是前端的各种跨域解决方式" class="headerlink" title="以上是两种是我常用的、以下是前端的各种跨域解决方式"></a>以上是两种是我常用的、以下是前端的各种跨域解决方式</h3><blockquote>
-<p>1、通过jsonp跨域<br>2、 document.domain + iframe跨域<br>3、 location.hash + iframe<br>4、 window.name + iframe跨域<br>5、 postMessage跨域<br>6、 跨域资源共享（CORS）<br>7、 nginx代理跨域<br>8、 nodejs中间件代理跨域<br>9、 WebSocket协议跨域</p>
-</blockquote>
-
-        </div>
-
+        <h2 id="小程序输入表情处理"><a href="#小程序输入表情处理" class="headerlink" title="小程序输入表情处理"></a>小程序输入表情处理</h2><p>项目中有个一个评论的功能，很平常的一个功能但是在安卓机上没有任何问题，却在ios上面输入评论的时候却有一个可以输入表情的按钮这个是在安卓上没有就有点尴尬了也是微信上独有的。找了一个其他小程序的输入也有这个功能都可以使用就觉得这个就不是问题了想了半天试过base64的方式但转换回来的时候就不正确了。最后使用了二进制的方式发送给后台。<br>
         
-            <div class="article-tags tags">
-                
-                    <a href="/tags/跨域/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;跨域</a>
-                
-                    <a href="/tags/中间件/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;中间件</a>
-                
+            <div class="readmore">
+                <a href="/2018/11/29/小程序中ios手机输入法带有表情显示问题/" class="flat-box">READ MORE</a>
             </div>
         
 
         
-            <div class="prev-next">
+            <div class="full-width auto-padding tags">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
-                            <h4>
-                                <a href="/2018/11/21/vue表情emoji组件/" rel="prev" title="vue表情emoji组件">
-                                  
-                                      vue表情emoji组件
-                                  
-                                </a>
-                            </h4>
-                            
-                                <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>跨域
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>组件
-                                    
-                                </h6>
-                            
-                        </span>
-                    </section>
+                    <a href="/tags/小程序/"><i class="fa fa-tag fa-fw"></i>&nbsp;小程序</a>
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2018/11/02/记一个音乐播放器进度条组件-Vue/" rel="prev" title="记一个音乐播放器进度条组件-Vue">
-                                    
-                                        记一个音乐播放器进度条组件-Vue
-                                    
-                                </a>
-                            </h4>
-                            
-                                <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>Vue
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>JavaScript
-                                    
-                                </h6>
-                            
-                        </span>
-                    </section>
+                    <a href="/tags/组件/"><i class="fa fa-tag fa-fw"></i>&nbsp;组件</a>
                 
             </div>
         
-
-    </section>
-
+    </p></section>
 </article>
 
-<br>
-
-<!-- 显示推荐文章和评论 -->
-
-    <article class="post white-box comments">
-        <section class="article typo">
-
-            
+        </div>
+    
+        <div class="post-wrapper">
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2018/11/29/小程序富文本显示/">
                 
-
-    <div class="recommended_posts">
-        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
-        <ul>
-            
-                <li><a href="http://yoursite.com/2018/11/29/小程序中ios手机输入法带有表情显示问题/">小程序ios输入表情显示和存取问题</a></li>
-            
-                <li><a href="http://yoursite.com/2018/11/29/小程序富文本显示/">小程序富文本显示</a></li>
-            
-                <li><a href="http://yoursite.com/2018/11/21/vue表情emoji组件/">vue表情emoji组件</a></li>
-            
-                <li><a href="http://yoursite.com/2018/11/02/记一个音乐播放器进度条组件-Vue/">记一个音乐播放器进度条组件-Vue</a></li>
-            
-                <li><a href="http://yoursite.com/2018/10/25/Hello-Node/">第一篇博客</a></li>
-            
-        </ul>
+                    小程序富文本显示
+                
+            </a>
+        </h2>
+        <time>
+            <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;2018-11-29
+        </time>
+        
+    
+    <div class="cats">
+        <a href="/categories/前端/">前端</a>
     </div>
 
 
-            
+    </section>
 
-            
+    <section class="article typo">
+        <h2 id="JS-实现HTML标签的转义"><a href="#JS-实现HTML标签的转义" class="headerlink" title="JS - 实现HTML标签的转义"></a>JS - 实现HTML标签的转义</h2><p>在小程序中的富文本编辑后的文本显示，小程序文档中有提供组件，我这里后台用的是百度的UEditor编辑器所在数据库中存有‘lt’，‘gt’等字符是在rich-text中处理不了的。通过想到转义的方法就到网上去找了一些相关的博客了解了一下根据别人的办法改变一下变成自己的解决办法。使用以下封装函数进行处理后在用rich-text组件即可达到正确显示的效果，通过正则表达式进行替换<br>
+        
+            <div class="readmore">
+                <a href="/2018/11/29/小程序富文本显示/" class="flat-box">READ MORE</a>
+            </div>
+        
 
+        
+            <div class="full-width auto-padding tags">
                 
-
+                    <a href="/tags/小程序/"><i class="fa fa-tag fa-fw"></i>&nbsp;小程序</a>
                 
-
+                    <a href="/tags/组件/"><i class="fa fa-tag fa-fw"></i>&nbsp;组件</a>
                 
-            
+            </div>
+        
+    </p></section>
+</article>
 
-        </section>
-    </article>
+        </div>
+    
+</section>
 
-
-<script>
-    window.subData = {
-        title: '关于前端跨域解决方法',
-        tools: true
-    }
-</script>
 
 
         </div>
@@ -443,13 +367,6 @@
     
     
         
-    <section class="m_widget toc-wrapper">
-        <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
-        <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域"><span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在前端HTML中的部分标签是自带跨域天赋"><span class="toc-text">在前端HTML中的部分标签是自带跨域天赋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域解决"><span class="toc-text">跨域解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax-JSONP"><span class="toc-text">ajax-JSONP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxyTable代理-node"><span class="toc-text">proxyTable代理(node)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求"><span class="toc-text">这个代理实际上是用的node的http-proxy-middleware插件完成跨域请求</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代理跨域本质-本地服务器-–》-代理-–》目标服务器-–》拿到数据后通过代理伪装成本地服务请求的返回值-—》然后浏览器就顺利收到了我们想要的数据"><span class="toc-text">代理跨域本质 本地服务器 –》 代理 –》目标服务器 –》拿到数据后通过代理伪装成本地服务请求的返回值 —》然后浏览器就顺利收到了我们想要的数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#以上是两种是我常用的、以下是前端的各种跨域解决方式"><span class="toc-text">以上是两种是我常用的、以下是前端的各种跨域解决方式</span></a></li></ol>
-        </div>
-    </section>
-
 
     
 
@@ -539,10 +456,6 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
-
-    
-    
-    
 
 
     <script>setLoadingBarProgress(100);</script>
